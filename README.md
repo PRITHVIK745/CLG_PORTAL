@@ -57,6 +57,108 @@ Update the connection string in your config or environment variable (e.g. `MONGO
 
 ---
 
+
+# 🚀 Getting Started
+1️⃣ Clone the Repository
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
+
+2️⃣ Create & Activate Virtual Environment (Recommended)
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# macOS / Linux
+python3 -m venv venv
+source venv/bin/activate
+
+3️⃣ Install Dependencies
+
+You mentioned you already have a requirements.txt file. Install all packages with:
+
+pip install -r requirements.txt
+
+4️⃣ Configure Environment Variables
+
+Create a .env file (or export variables manually) with something like:
+
+MONGO_URI="your_mongodb_atlas_connection_string"
+SECRET_KEY="your_secret_key"
+FLASK_ENV=development
+
+
+If your app reads different variable names, edit them here accordingly.
+
+5️⃣ Run the Application
+
+Depending on how your app is structured:
+
+Option A: Using flask run
+
+# On Windows (PowerShell / CMD)
+set FLASK_APP=app.py
+
+# On macOS / Linux
+export FLASK_APP=app.py
+
+flask run
+
+
+Option B: Using python directly
+
+python app.py
+
+
+Server will usually run at:
+
+http://127.0.0.1:5000
+
+🔐 Login Details
+
+These are just the rules; actual usernames/passwords depend on your database entries.
+
+Teacher
+
+Username: eteacher (or whatever you set in DB)
+
+Password: Set in the database (manually or via a seed script)
+
+Student
+
+Username: The name the teacher entered when creating the student.
+
+Password: The USN the teacher entered for that student.
+
+Make sure this convention is clearly communicated to teachers and students.
+
+🧭 Basic Flow
+
+Teacher logs in
+
+Uses eteacher username & password.
+
+Teacher adds students
+
+Either upload a CSV file or add manually via form.
+
+Teacher adds marks & notes
+
+For each student and subject.
+
+Student logs in
+
+Username = name given by teacher.
+
+Password = USN.
+
+Student dashboard
+
+View marks per subject.
+
+Download marksheet.
+
+Download notes per subject.
+
 ## 📁 CSV Format for Student Upload
 
 When uploading students via CSV, follow this format (example):
